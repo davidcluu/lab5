@@ -6,6 +6,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
+  <script type="text/javascript" src="/js/jquery-1.11.0.js" ></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/hci-friends.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/hci-friends.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,6 +23,20 @@
 
 <body>
 	<h1>My HCI Friends</h1>
+
+  {{#each friends}}
+    <div class="friend-container">
+      <div class="friend-image-container">
+        <img src="{{imageURL}}" class="img-responsive img-rounded">
+      </div>
+      <h3>
+        <a href="#">
+          {{name}}
+        </a>
+      </h3>
+      <p>{{description}}</p>
+    </div>
+  {{/each}}
 
 	<form id="addFriendForm" role="form" method="get" action="/add">
 		<h3>Add a friend</h3>

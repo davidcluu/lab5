@@ -1,3 +1,7 @@
+body {
+  margin: 0 10px;
+}
+
 /* applies to anything of class "example-class-selector" */
 .example-class-selector {
 	margin-top: 2em;
@@ -11,4 +15,13 @@
 
 h1, h2, h3, h4, h5 {
 	color: #8382BF;
+}
+
+.friend-container {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.friend-image-container {
+  width: 200px;
 }

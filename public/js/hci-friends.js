@@ -10,37 +10,44 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friend-container a").click(function(e){
+		e.preventDefault();
+
+		var anagram = anagrammedName( $(this).text() );
+		$(this).text(anagram);
+	});
 }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
-	if (name == "Doug Engelbart") {
+	var trimmedName = name.trim();
+
+	if (trimmedName == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
-	else if (name == "Ivan Sutherland") {
+	else if (trimmedName == "Ivan Sutherland") {
 		return "Vandal Heist Run";
 	}
-	else if (name == "JCR Licklider") {
+	else if (trimmedName == "JCR Licklider") {
 		return "Crick Rid Jell";
 	}
-	else if (name == "Vannevar Bush") {
+	else if (trimmedName == "Vannevar Bush") {
 		return "Ravens Van Hub";
 	}
-	else if (name == "Alan C. Kay") {
+	else if (trimmedName == "Alan C. Kay") {
 		return "Canal Yak";
 	}
-	else if (name == "Allen Newell") {
+	else if (trimmedName == "Allen Newell") {
 		return "Ellen All New";
 	}
-	else if (name == "Lucy Suchman") {
+	else if (trimmedName == "Lucy Suchman") {
 		return "Lunacy Chums";
 	}
-	else if (name == "Grace Hopper") {
+	else if (trimmedName == "Grace Hopper") {
 		return "Gear Chopper";
 	}
 	else {
-		console.log(name + " not known for anagramming.");
-		return name;
+		console.log(trimmedName + " not known for anagramming.");
+		return trimmedName;
 	}
 }
